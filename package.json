@@ -24,10 +24,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install",
-    "check": "yarn lint && yarn prettier --check"
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +62,14 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.4"
+  },
+  "lint-staged": {
+    "**/*.ts?(x)": [
+      "npm run lint",
+      "npm run prettier",
+      "git add"
+    ]
   }
 }
