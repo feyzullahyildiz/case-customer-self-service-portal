@@ -1,0 +1,13 @@
+.main {
+    background-color: var(--primaryColor);
+    padding: 1rem;
+
+    --fontColor: #918ea2;
+}
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* .details {
+
+} */
