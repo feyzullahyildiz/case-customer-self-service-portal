@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FaPhone, FaTag, FaFileAlt } from 'react-icons/fa';
+import { FaPhone, FaAt, FaFileAlt } from 'react-icons/fa';
 import { Person } from '../../models';
 import cn from 'classnames';
 import styles from './styles.module.css';
@@ -16,7 +16,7 @@ export const PersonListItem: FC<Person> = (props) => {
           {props.phone}
         </span>
         <span className={styles.info}>
-          <FaTag className={styles.icon} size={12} />
+          <FaAt className={styles.icon} size={12} />
           {props.userName}
         </span>
         <span className={cn(styles.info, styles.policyNo)}>

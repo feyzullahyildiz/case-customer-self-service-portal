@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useDeferredValue } from 'react';
 import { Search, PersonList } from './components';
 import './App.css';
-import { Person } from './models';
+import { PersonService } from './service/person.service';
 
 function App() {
   const [searchText, setSearchText] = useState('');
-  const data: Person[] = new Array(14)
-    .fill(() => null)
-    .map((_, i) => ({
-      id: i.toString(),
-      firstName: 'Ann',
-      lastName: 'Liebmann',
-      phone: '+27-61-453-544',
-      policyNo: '0013983887 | 0013983887',
-      userName: 'ann.lieb',
-    }));
+  const deferredValue = useDeferredValue(searchText);
+
+  const data = useMemo(() => {
+    return PersonService.filterBy(deferredValue);
+  }, [deferredValue]);
   return (
     <div className="App">
       <Search text={searchText} onChange={setSearchText} />
