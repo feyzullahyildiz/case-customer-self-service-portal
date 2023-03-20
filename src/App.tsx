@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useDeferredValue } from 'react';
 import { Search, PersonList } from './components';
-import './App.css';
+import styles from './App.module.css';
 import { PersonService } from './service/person.service';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     return PersonService.filterBy(deferredValue);
   }, [deferredValue]);
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Search text={searchText} onChange={setSearchText} />
       <PersonList data={data} />
     </div>

@@ -16,7 +16,7 @@ export function createRandomUser(
     userName: userName ?? faker.internet.userName(),
     firstName: firstName ?? faker.name.firstName(),
     lastName: lastName ?? faker.name.lastName(),
-    phone: phone ?? faker.phone.number(),
+    phone: phone ?? faker.phone.number('+##-##-###-####'),
     policyNo: policyNo ?? `${getRandomPolicyNo()} | ${getRandomPolicyNo()}`,
   };
 }
@@ -34,14 +34,14 @@ const data: Person[] = [
     '0013983887 | 0013983887'
   ),
   createRandomUser(
-    'ann.lieb@',
+    'ann.summer@',
     'Ann',
     'Summer',
     '+27-61-453-5444',
     '0013983887 | 0013983887'
   ),
   createRandomUser(
-    'ann.lieb@',
+    'anna.samuel@',
     'Anabelle',
     'Samuel',
     '+27-61-453-5444',
