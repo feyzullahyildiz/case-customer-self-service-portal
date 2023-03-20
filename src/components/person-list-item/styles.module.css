@@ -1,13 +1,31 @@
 .main {
-    background-color: var(--primaryColor);
-    padding: 1rem;
-
-    --fontColor: #918ea2;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex: 1;
 }
 .details {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
 }
-/* .details {
-
-} */
+.name {
+  font-size: x-large;
+  margin-bottom: 0.5rem;
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 4px;
+  flex: 1;
+  white-space: nowrap;
+}
+.policyNo {
+  flex: 2;
+  white-space: break-spaces;
+}
+.icon {
+  flex-shrink: 0;
+}

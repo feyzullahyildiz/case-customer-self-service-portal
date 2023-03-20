@@ -1,0 +1,10 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.main > * {
+    background-color: red;
+}
+.main>*:nth-child(even) {background: #f7f7f7}
+.main>*:nth-child(odd) {background: #e8e8e8}

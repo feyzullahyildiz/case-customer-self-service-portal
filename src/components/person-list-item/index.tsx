@@ -1,33 +1,27 @@
 import React, { FC } from 'react';
 import { FaPhone, FaTag, FaFileAlt } from 'react-icons/fa';
+import { Person } from '../../models';
+import cn from 'classnames';
 import styles from './styles.module.css';
-interface Person {
-  id: string;
-  userName: string;
-  firstName: string;
-  lastName: string;
-  phone: string;
-  policyNo: string;
-}
 
 export const PersonListItem: FC<Person> = (props) => {
   return (
     <div className={styles.main}>
-      <h4>
+      <span className={styles.name}>
         {props.firstName} {props.lastName}
-      </h4>
+      </span>
       <div className={styles.details}>
-        <span>
-          <FaPhone />
+        <span className={styles.info}>
+          <FaPhone className={styles.icon} size={12} />
           {props.phone}
         </span>
-        <span>
-          <FaTag />
-          {props.phone}
+        <span className={styles.info}>
+          <FaTag className={styles.icon} size={12} />
+          {props.userName}
         </span>
-        <span>
-          <FaFileAlt />
-          {props.phone}
+        <span className={cn(styles.info, styles.policyNo)}>
+          <FaFileAlt className={styles.icon} size={12} />
+          <span>Policy No: {props.policyNo}</span>
         </span>
       </div>
     </div>
